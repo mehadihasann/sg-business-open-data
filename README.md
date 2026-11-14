@@ -16,7 +16,7 @@ The Singaporean economy is highly dynamic, constantly pivoting towards new techn
 
 **The objective of this analysis is to answer:**
 1. Which industries have demonstrated the highest Compound Annual Growth Rate (CAGR) over the last 30 years?
-2. Which sectors experienced the most severe single-year contractions (e.g., during economic downturns)?
+2. Which sectors experienced the most severe single-year contractions, such as during economic downturns?
 3. How does the volume of business formations differ between high-growth sectors and legacy industries?
 
 ## 🛠️ Technical Architecture & Methodology
@@ -36,9 +36,12 @@ This project demonstrates a complete, end-to-end data pipeline:
 * **Line Chart Analysis:** Track historical trends with hover-enabled, unified Plotly tooltips.
 * **Automated Market Intelligence:** The dashboard dynamically reads the data to generate written insights, automatically highlighting the "Market Volume Leader," the "Largest Surge," and the "Sharpest Contraction."
 
-## 💻 How to Run Locally
-To run this dashboard on your local machine:
+## 🌐 Live Demo
+*(Link will be added here after Streamlit deployment)*
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/sg-business-open-data.git
+## 📊 Data Source & Acknowledgements
+* Data provided by the **Accounting and Corporate Regulatory Authority (ACRA)** and compiled by the **Singapore Department of Statistics (SingStat)**.
+* Retrieved via the open data platform: [data.gov.sg](https://data.gov.sg).
+
+---
+*Developed as part of a Master's Application Portfolio for Digital Business & AI Management.*
