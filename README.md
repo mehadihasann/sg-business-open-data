@@ -12,7 +12,8 @@ Understanding the shifting dynamics of a nation's business landscape is crucial 
 By examining historical trends, this tool identifies which industries are expanding, which are contracting, and provides actionable insights into long-term economic resilience.
 
 ## 💡 Business Problem & Objectives
-The Singaporean economy is highly dynamic, constantly pivoting towards new technologies and services. However, traditional sectors (like F&B and Retail) remain vital. 
+The Singaporean economy is highly dynamic, constantly pivoting towards new technologies and services. However, traditional sectors (like Food & Beverage and Retail) remain vital. 
+
 **The objective of this analysis is to answer:**
 1. Which industries have demonstrated the highest Compound Annual Growth Rate (CAGR) over the last 30 years?
 2. Which sectors experienced the most severe single-year contractions (e.g., during economic downturns)?
