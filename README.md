@@ -37,7 +37,7 @@ This project demonstrates a complete, end-to-end data pipeline:
 * **Automated Market Intelligence:** The dashboard dynamically reads the data to generate written insights, automatically highlighting the "Market Volume Leader," the "Largest Surge," and the "Sharpest Contraction."
 
 ## 🌐 Live Demo
-*(Link will be added here after Streamlit deployment)*
+*https://sg-business-trends.streamlit.app/*
 
 ## 📊 Data Source & Acknowledgements
 * Data provided by the **Accounting and Corporate Regulatory Authority (ACRA)** and compiled by the **Singapore Department of Statistics (SingStat)**.
