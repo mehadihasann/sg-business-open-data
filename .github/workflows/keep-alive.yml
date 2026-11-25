@@ -1,0 +1,17 @@
+name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    # Runs every 6 hours (UTC time). Adjust frequency as needed.
+    # Format: minute hour day month weekday
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allows you to manually trigger this workflow from the Actions tab for testing
+
+jobs:
+  ping-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit URL
+        run: |
+          # Replace the URL below with your Streamlit app link
+          curl -s -o /dev/null -w "HTTP Status: %{http_code}\n" https://sg-business-trends.streamlit.app/
