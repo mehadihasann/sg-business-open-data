@@ -2,16 +2,48 @@ name: Keep Streamlit App Awake
 
 on:
   schedule:
-    # Runs every 6 hours (UTC time). Adjust frequency as needed.
-    # Format: minute hour day month weekday
     - cron: '0 */6 * * *'
-  workflow_dispatch: # Allows you to manually trigger this workflow from the Actions tab for testing
+  workflow_dispatch:
 
 jobs:
-  ping-app:
+  wake-app:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Streamlit URL
+      - name: Wake up Streamlit App
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install Playwright
         run: |
-          # Replace the URL below with your Streamlit app link
-          curl -s -o /dev/null -w "HTTP Status: %{http_code}\n" https://sg-business-trends.streamlit.app/
+          pip install playwright
+          playwright install chromium
+
+      - name: Run the wake-up script
+        run: |
+          cat > wake_up.py << 'EOF'
+          from playwright.sync_api import sync_playwright
+          import time
+
+          def wake_app():
+              with sync_playwright() as p:
+                  browser = p.chromium.launch(headless=True)
+                  page = browser.new_page()
+                  # Replace the URL below with your app link
+                  page.goto("https://sg-business-trends.streamlit.app", wait_until="domcontentloaded", timeout=120000)
+                  time.sleep(5)
+                  
+                  # Look for the wake-up button
+                  wake_btn = page.get_by_role("button", name="Yes, get this app back up!")
+                  if wake_btn.count() > 0:
+                      print("App is sleeping. Waking it up...")
+                      wake_btn.click()
+                      time.sleep(60) # Wait for app to boot
+                  else:
+                      print("App is already awake.")
+                  
+                  browser.close()
+
+          wake_app()
+          EOF
+          python wake_up.py
